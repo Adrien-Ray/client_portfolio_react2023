@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './layout.css';
@@ -7,22 +8,30 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function funcFetch(updatebrutData) {
+async function funcFetch(updatebrutData, brutData) {
     console.log('il faut fetch');
-    var url = 'https://portfolio.accesdenied.net/api';
+    // var url = 'https://portfolio.accesdenied.net/api/index.php';
+    var url = 'http://localhost/perso/domains-portfolio/api/';
     var header = {
         mode: 'no-cors',
         method: "GET",
         header: {
-            /* 'Accept': 'application/json', */
+            'Accept': 'application/json',
             'Content-Type': ' application/json'
         },
     };
-    fetch(url, header)
-        .then(response => JSON.stringify(response.json()))
-        .then(json => {
-            console.log(json);
+    /* var header = {
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    } */
+    axios.get(url, header)
+        .then(response => {
+            console.log(response.data)
+            updatebrutData(response.data)
         })
+        .catch(error => console.error(error));
 }
 
 function Layout() {
@@ -30,12 +39,16 @@ function Layout() {
     let testExistData = Object.keys(brutData).length;
     console.log(testExistData);
     if (testExistData === 0) {
-        funcFetch(updatebrutData);
+        console.log(funcFetch(updatebrutData, brutData));
+        console.log('fetch');
     } else {
         console.log('le fetch a été effectuer');
     }
     return (
-        <h1>coucou!</h1>
+        <div>
+            <h1>coucou!</h1>
+            {/* <p>{brutData}</p> */}
+        </div>
     )
 }
 
