@@ -11,7 +11,6 @@ import ProjectList from "./components/ProjectList/ProjectList";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 async function funcFetch(updatebrutData, brutData) {
-    console.log('il faut fetch');
     var url = 'https://portfolio.accesdenied.net/api/index.php';
     // var url = 'http://localhost/perso/domains-portfolio/api/';
     // var url = 'https://localhost/acs/domains-portfolio/api/index.php';
