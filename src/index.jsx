@@ -11,7 +11,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 async function funcFetch(updatebrutData, brutData) {
     console.log('il faut fetch');
     // var url = 'https://portfolio.accesdenied.net/api/index.php';
-    var url = 'http://localhost/perso/domains-portfolio/api/';
+    // var url = 'http://localhost/perso/domains-portfolio/api/';
+    var url = 'https://localhost/acs/domains-portfolio/api/index.php';
     var header = {
         mode: 'no-cors',
         method: "GET",
@@ -20,12 +21,6 @@ async function funcFetch(updatebrutData, brutData) {
             'Content-Type': ' application/json'
         },
     };
-    /* var header = {
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    } */
     axios.get(url, header)
         .then(response => {
             console.log(response.data)
@@ -39,15 +34,19 @@ function Layout() {
     let testExistData = Object.keys(brutData).length;
     console.log(testExistData);
     if (testExistData === 0) {
+        console.log('fetch launch ...');
         console.log(funcFetch(updatebrutData, brutData));
-        console.log('fetch');
     } else {
         console.log('le fetch a été effectuer');
+        return(
+            <div>
+                <p>{JSON.stringify(brutData)}</p>
+            </div>
+        )
     }
     return (
         <div>
             <h1>coucou!</h1>
-            {/* <p>{brutData}</p> */}
         </div>
     )
 }
