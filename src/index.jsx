@@ -6,13 +6,15 @@ import './layout.css';
 // import Layout from './components/layout/Layout.jsx';
 import reportWebVitals from './reportWebVitals';
 
+import ProjectList from "./components/ProjectList/ProjectList";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 async function funcFetch(updatebrutData, brutData) {
     console.log('il faut fetch');
-    // var url = 'https://portfolio.accesdenied.net/api/index.php';
+    var url = 'https://portfolio.accesdenied.net/api/index.php';
     // var url = 'http://localhost/perso/domains-portfolio/api/';
-    var url = 'https://localhost/acs/domains-portfolio/api/index.php';
+    // var url = 'https://localhost/acs/domains-portfolio/api/index.php';
     var header = {
         mode: 'no-cors',
         method: "GET",
@@ -40,7 +42,7 @@ function Layout() {
         console.log('le fetch a été effectuer');
         return(
             <div>
-                <p>{JSON.stringify(brutData)}</p>
+                <ProjectList brutData={brutData} />
             </div>
         )
     }
