@@ -1,24 +1,26 @@
+import React, { useState, useEffect } from 'react';
+
 import './CardSlide.css';
 
-function CardSlide(props) {
-    // list={projectArray} autherObj={props.autherObj} updateAutherObj={props.updateAutherObj}
-    let count = 0;
-    let TheDom = (
-        <a className="CardSlide">
-            <h2>{props.autherObj.count}</h2>
+function CardSlide(props) { 
+    const { list } = props;
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCount(count => (count + 1) % list.length);
+        }, 1000);
+        return () => clearInterval(intervalId);
+    }, [list]);
+
+    let actualObj = list[count];
+
+    return (
+        <a className="CardSlide" href={actualObj.project_link}>
+            <h2>
+                {count} {actualObj.project_title}
+            </h2>
         </a>
     );
-    setInterval(() => {
-        count += 1;
-        console.log(count);
-        props.updateAutherObj(
-            {
-                count,
-            }
-        )
-    }, 500);
-    return (
-        TheDom
-    )
 }
 export default CardSlide;

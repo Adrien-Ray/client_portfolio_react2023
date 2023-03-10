@@ -7,12 +7,13 @@ function ProjectList(props) {
     projectArray.sort((b, a) => {
         return a.project_id - b.project_id;
       });
-    console.log('props.brutData.project.reverse() : ',  projectArray);
+    // console.log('props.brutData.project.reverse() : ',  projectArray);
     let list = [];
     for (let index = 0; index < projectArray.length; index++) {
         const element = projectArray[index];
+        // list.push(element);
             list.push(
-                <Card type="project" object={element}/>
+                <Card key={element.project_id} type="project" object={element}/>
             )
     }
     return (
