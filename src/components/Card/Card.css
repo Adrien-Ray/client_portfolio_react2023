@@ -16,10 +16,8 @@
 }
 .Card > img {
   aspect-ratio: 1.5/1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .Card > img.contain {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }/*# sourceMappingURL=Card.css.map */

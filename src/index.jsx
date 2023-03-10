@@ -34,12 +34,12 @@ function Layout() {
     const [brutData, updatebrutData] = React.useState({});
     const [autherObj, updateAutherObj] = React.useState({});
     let testExistData = Object.keys(brutData).length;
-    console.log(testExistData);
+    // console.log(testExistData);
     if (testExistData === 0) {
-        console.log('fetch launch ...');
-        console.log(funcFetch(updatebrutData, brutData));
+        // console.log('fetch launch ...');
+        funcFetch(updatebrutData, brutData);
     } else {
-        console.log('le fetch a été effectuer');
+        // console.log('le fetch a été effectuer');
         return(
             <div>
                 <ProjectList brutData={brutData} autherObj={autherObj} updateAutherObj={updateAutherObj} />
