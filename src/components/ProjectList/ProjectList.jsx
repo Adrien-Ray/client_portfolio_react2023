@@ -17,7 +17,7 @@ function ProjectList(props) {
     }
     return (
         <div className="ProjectList">
-            <CardSlide list={projectArray}/>
+            <CardSlide list={projectArray} autherObj={props.autherObj} updateAutherObj={props.updateAutherObj} />
             <div className="ProjectList__parentCard">
                 {list}
             </div>
