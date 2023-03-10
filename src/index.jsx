@@ -32,6 +32,7 @@ async function funcFetch(updatebrutData, brutData) {
 
 function Layout() {
     const [brutData, updatebrutData] = React.useState({});
+    const [autherObj, updateAutherObj] = React.useState({});
     let testExistData = Object.keys(brutData).length;
     console.log(testExistData);
     if (testExistData === 0) {
@@ -41,7 +42,7 @@ function Layout() {
         console.log('le fetch a été effectuer');
         return(
             <div>
-                <ProjectList brutData={brutData} />
+                <ProjectList brutData={brutData} autherObj={autherObj} updateAutherObj={updateAutherObj} />
             </div>
         )
     }
