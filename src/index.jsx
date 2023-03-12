@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 import ProjectList from "./components/ProjectList/ProjectList";
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 async function funcFetch(updatebrutData, brutData) {

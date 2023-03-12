@@ -5,11 +5,10 @@ import './CardSlide.css';
 function CardSlide(props) { 
     const { list } = props;
     const [count, setCount] = useState(0);
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCount(count => (count + 1) % list.length);
-        }, 1000);
+        }, 2000);
         return () => clearInterval(intervalId);
     }, [list]);
 
@@ -17,6 +16,7 @@ function CardSlide(props) {
 
     return (
         <a className="CardSlide" href={actualObj.project_link}>
+            <img className={'objFit'+actualObj.project_thumbnail_fit} src={props.folderToUpload+actualObj.project_thumbnail} alt={`présentation du projet ${actualObj.project_title}`} />
             <h2>
                 {count} {actualObj.project_title}
             </h2>
