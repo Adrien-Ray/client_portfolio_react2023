@@ -1,9 +1,9 @@
 import './Card.css';
 
-const folderToUpload = 'https://portfolio.accesdenied.net/assets/img/upload/'
-
 function Card(props) {
     // props: type (project or article) and object
+    const folderToUpload = props.folderToUpload;
+
     let title;
     let link;
     let target;
@@ -29,7 +29,9 @@ function Card(props) {
     }
     return (
             <a href={link} target={target} className="Card">
-                <h2>{title}</h2>
+                <div className="titleLayer">
+                    <h2>{title}</h2>
+                </div>
                 <img
                     src={imgSrc}
                     alt={'thumbnail du projet'+title}
