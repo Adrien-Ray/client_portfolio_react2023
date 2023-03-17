@@ -36,8 +36,10 @@
   margin: 0;
 }
 .Card > img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .Card > img.contain {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=Card.css.map */
