@@ -1,22 +1,76 @@
 .CardSlide {
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   margin-bottom: 4rem;
-  height: 100vh;
-  position: relative;
+  height: 35rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 61, 61);
+  padding: 0 1rem;
+}
+.CardSlide > * {
+  width: 40rem;
+  max-width: 100%;
 }
 .CardSlide h2 {
-  margin: 0;
+  margin: 2rem 0 0.5rem 0;
+  font-size: 2rem;
+  text-align: center;
 }
 .CardSlide img {
   display: block;
-  width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: -2;
-  object-fit: cover;
+  max-height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .CardSlide img.objFit1 {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.CardSlide p {
+  height: 6rem;
+  overflow: hidden;
+  text-align: justify;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+.CardSlide .button {
+  background-color: rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  height: 3rem;
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  margin: 1rem 0 1rem 0;
+  position: relative;
+  transition: all 0.25s;
+  border: outset 1px black;
+}
+.CardSlide .button a {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  line-height: 3rem;
+}
+.CardSlide .button .button__back {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.25s;
+}
+.CardSlide .button:hover {
+  border: 1px inset black;
+}
+.CardSlide .button:hover .button__back {
+  width: 100%;
 }/*# sourceMappingURL=CardSlide.css.map */
