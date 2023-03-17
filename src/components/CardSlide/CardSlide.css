@@ -1,54 +1,58 @@
 .CardSlide {
   text-decoration: none;
+  margin-bottom: 4rem;
+  min-height: 100vh;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 61, 61);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CardSlide .CardSlide__card {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin-bottom: 4rem;
   height: 35rem;
-  color: rgb(255, 255, 255);
-  background-color: rgb(61, 61, 61);
-  padding: 0 1rem;
 }
-.CardSlide > * {
+.CardSlide .CardSlide__card > * {
   width: 40rem;
   max-width: 100%;
 }
-.CardSlide h2 {
-  margin: 2rem 0 0.5rem 0;
-  font-size: 2rem;
+.CardSlide .CardSlide__card h2 {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.8rem;
   text-align: center;
 }
-.CardSlide img {
+.CardSlide .CardSlide__card img {
   display: block;
   height: 100%;
   max-height: 15rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.CardSlide img.objFit1 {
+.CardSlide .CardSlide__card img.objFit1 {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.CardSlide p {
+.CardSlide .CardSlide__card p {
   height: 6rem;
   overflow: hidden;
   text-align: justify;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
 }
-.CardSlide .button {
+.CardSlide .CardSlide__card .button {
   background-color: rgba(255, 255, 255, 0.75);
   font-weight: bold;
   height: 3rem;
   text-align: center;
   vertical-align: middle;
   display: block;
-  margin: 1rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   position: relative;
-  transition: all 0.25s;
-  border: outset 1px black;
 }
-.CardSlide .button a {
+.CardSlide .CardSlide__card .button a {
   position: absolute;
   display: block;
   left: 0;
@@ -58,7 +62,7 @@
   text-decoration: none;
   line-height: 3rem;
 }
-.CardSlide .button .button__back {
+.CardSlide .CardSlide__card .button .button__back {
   position: absolute;
   display: block;
   top: 0;
@@ -68,9 +72,6 @@
   background-color: rgb(255, 255, 255);
   transition: all 0.25s;
 }
-.CardSlide .button:hover {
-  border: 1px inset black;
-}
-.CardSlide .button:hover .button__back {
+.CardSlide .CardSlide__card .button:hover .button__back {
   width: 100%;
 }/*# sourceMappingURL=CardSlide.css.map */

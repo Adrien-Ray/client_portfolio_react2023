@@ -22,14 +22,26 @@ function CardSlide(props) {
             </div>
         );
     }
+    let actualObjLinkRepo = '';
+    if (actualObj.project_github != '') {
+        actualObjLinkRepo = (
+            <div className='button'>
+            <div className='button__back'></div>
+                <a href={actualObj.project_github} target="_blank" rel="noopener noreferrer">Voir le repository</a>
+            </div>
+        );
+    }
 
     return (
-        <div className="CardSlide">
-            <h2>{actualObj.project_title}</h2>
-            <img className={'objFit'+actualObj.project_thumbnail_fit} src={props.folderToUpload+actualObj.project_thumbnail} alt={`présentation du projet ${actualObj.project_title}`} />
-            <p>{actualObj.project_context}</p>
-            {actualObjLink}
-        </div>
+        <section className='CardSlide'>
+            <div className="CardSlide__card">
+                <h2>{actualObj.project_title}</h2>
+                <img className={'objFit'+actualObj.project_thumbnail_fit} src={props.folderToUpload+actualObj.project_thumbnail} alt={`présentation du projet ${actualObj.project_title}`} />
+                <p>{actualObj.project_context}</p>
+                {actualObjLink}
+                {actualObjLinkRepo}
+            </div>
+        </section>
     );
 }
 export default CardSlide;
