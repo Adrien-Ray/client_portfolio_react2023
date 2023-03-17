@@ -19,8 +19,11 @@ function ProjectList(props) {
     return (
         <div className="ProjectList">
             <CardSlide list={projectArray} autherObj={props.autherObj} updateAutherObj={props.updateAutherObj} folderToUpload={folderToUpload} />
-            <div className="ProjectList__parentCard">
-                {list}
+            <div className="projectList">
+                <h2>mes projets</h2>
+                <div className="ProjectList__parentCard">
+                    {list}
+                </div>
             </div>
             {/* <p>{JSON.stringify(props.brutData)}</p> */}
         </div>
