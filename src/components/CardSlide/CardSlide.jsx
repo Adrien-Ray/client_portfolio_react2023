@@ -5,16 +5,20 @@ import './CardSlide.css';
 function CardSlide(props) { 
     const { list } = props;
     const [count, setCount] = useState(0);
+    const [CardSlide__card, setCardSlide__card] = useState('CardSlide__card');
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCount(count => (count + 1) % list.length);
-        }, 4000);
+            setCardSlide__card(prevState =>
+                prevState === "CardSlide__card" ? "CardSlide__card2" : "CardSlide__card"
+            );
+        }, 8000);
         return () => clearInterval(intervalId);
     }, [list]);
 
     let actualObj = list[count];
     let actualObjLink = '';
-    if (actualObj.project_link != '') {
+    if (actualObj.project_link !== '') {
         actualObjLink = (
             <div className='button'>
             <div className='button__back'></div>
@@ -23,7 +27,7 @@ function CardSlide(props) {
         );
     }
     let actualObjLinkRepo = '';
-    if (actualObj.project_github != '') {
+    if (actualObj.project_github !== '') {
         actualObjLinkRepo = (
             <div className='button'>
             <div className='button__back'></div>
@@ -34,7 +38,7 @@ function CardSlide(props) {
 
     return (
         <section className='CardSlide'>
-            <div className="CardSlide__card">
+            <div className={CardSlide__card}>
                 <h2>{actualObj.project_title}</h2>
                 <img className={'objFit'+actualObj.project_thumbnail_fit} src={props.folderToUpload+actualObj.project_thumbnail} alt={`présentation du projet ${actualObj.project_title}`} />
                 <p>{actualObj.project_context}</p>
