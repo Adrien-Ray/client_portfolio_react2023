@@ -1,22 +1,25 @@
 import './Card.css';
+import PopupProject from "../PopupProject/PopupProject";
+import React, { useState/* , useEffect */ } from 'react';
 
 function Card(props) {
     // props: type (project or article) and object
     const folderToUpload = props.folderToUpload;
 
+    const [showPopup, setShowPopup] = useState(false);
+
+    const setPopupProject = () => {
+        (showPopup) ? setShowPopup(false) : setShowPopup(true);
+        console.log('showPopup', showPopup);
+    }
+
     let title;
-    let link;
-    let target;
     let imgSrc;
     let classThumb;
     if (props.type === "project") {
         title = props.object.project_title;
         if (props.object.project_link === "") {
-            link = "#";
-            target = "";
         } else {
-            link = props.object.project_link;
-            target = "_blank";
         }
         imgSrc = folderToUpload+props.object.project_thumbnail;
         if (props.object.project_thumbnail_fit === 0) {
@@ -27,17 +30,19 @@ function Card(props) {
     } else {
         
     }
+
     return (
-            <a href={link} target={target} className="Card">
+            <div className="Card">
                 <div className="titleLayer">
-                    <h2>{title}</h2>
+                    <h2 onClick={() => setPopupProject(setShowPopup)}>{title}</h2>
                 </div>
                 <img
                     src={imgSrc}
                     alt={'thumbnail du projet'+title}
                     className={classThumb}
                 />
-            </a>
+                {showPopup && <PopupProject object={props.object} showPopup={showPopup} setShowPopup={setShowPopup}/>}
+            </div>
     )
 }
 

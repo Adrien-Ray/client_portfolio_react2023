@@ -21,7 +21,7 @@ function CardSlide(props) {
     if (actualObj.project_link !== '') {
         actualObjLink = (
             <div className='button'>
-            <div className='button__back'></div>
+                <div className='button__back'></div>
                 <a href={actualObj.project_link} target="_blank" rel="noopener noreferrer">Voir le projet</a>
             </div>
         );
@@ -30,7 +30,7 @@ function CardSlide(props) {
     if (actualObj.project_github !== '') {
         actualObjLinkRepo = (
             <div className='button'>
-            <div className='button__back'></div>
+                <div className='button__back'></div>
                 <a href={actualObj.project_github} target="_blank" rel="noopener noreferrer">Voir le repository</a>
             </div>
         );

@@ -1,5 +1,6 @@
 import Card from "../Card/Card";
 import CardSlide from "../CardSlide/CardSlide";
+// import PopupProject from "../PopupProject/PopupProject";
 import './ProjectList.css';
 const folderToUpload = 'https://portfolio.accesdenied.net/assets/img/upload/';
 function ProjectList(props) {
@@ -25,7 +26,6 @@ function ProjectList(props) {
                     {list}
                 </div>
             </div>
-            {/* <p>{JSON.stringify(props.brutData)}</p> */}
         </div>
     )
 }
