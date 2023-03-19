@@ -49,7 +49,7 @@ function Layout() {
     }
     return (
         <div>
-            <h1>coucou!</h1>
+            <h1>Chargement des données du portfolio</h1>
         </div>
     )
 }
