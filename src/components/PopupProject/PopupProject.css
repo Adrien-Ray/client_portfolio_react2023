@@ -1,0 +1,25 @@
+.PopupProject {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  z-index: 1000;
+}
+.PopupProject .PopupProject__buttonClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  width: 8rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+.PopupProject.displaynone {
+  display: none;
+}/*# sourceMappingURL=PopupProject.css.map */

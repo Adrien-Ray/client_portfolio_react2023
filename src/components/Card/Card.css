@@ -27,6 +27,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .Card > .titleLayer > h2 {
   display: inline;
@@ -37,10 +38,8 @@
   margin: 0;
 }
 .Card > img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .Card > img.contain {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }/*# sourceMappingURL=Card.css.map */
