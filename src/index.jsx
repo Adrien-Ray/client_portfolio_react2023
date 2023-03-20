@@ -7,6 +7,7 @@ import './layout.css';
 import reportWebVitals from './reportWebVitals';
 
 import ProjectList from "./components/ProjectList/ProjectList";
+import Presentation from "./components/Presentation/Presentation";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -39,14 +40,13 @@ function Layout() {
     } else {
         return(
             <div>
+                <Presentation/>
                 <ProjectList brutData={brutData} autherObj={autherObj} updateAutherObj={updateAutherObj} />
             </div>
         )
     }
     return (
-        <div>
-            <h1>Chargement des données du portfolio</h1>
-        </div>
+        <Presentation/>
     )
 }
 

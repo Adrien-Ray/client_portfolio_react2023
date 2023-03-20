@@ -8,3 +8,10 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+:root{
+    --background_component_presentation: rgb(50, 50, 50);
+    --background_component_cardslide: rgb(60, 60, 60);
+    --background_component_projectList: rgb(70, 70, 70);
+    --background_component_popupProject: rgb(80, 80, 80);
+}

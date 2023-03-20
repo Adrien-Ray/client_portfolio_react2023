@@ -9,7 +9,7 @@
     display:block;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(100, 100, 100);
+    background-color: var(--background_component_popupProject);
     color: white;
     z-index: 1000;
     padding: 1rem;
@@ -47,7 +47,7 @@
             top: 0;
             height: 100%;
             width: 0;
-            background-color: rgba($color: #ffffff, $alpha: .3);
+            background-color: rgba($color: #ffffff, $alpha: .2);
             transition: all .25s;
         }
         &:hover .backLayer{
