@@ -4,7 +4,7 @@
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    background-color: rgb(80, 80, 80);
+    background-color: var(--background_component_projectList);
     >h2 {
         color: white;
         font-size: 1.5rem;

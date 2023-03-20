@@ -13,6 +13,7 @@
   aspect-ratio: 1.5/1;
 }
 .Card:hover > .titleLayer {
+  transition: all 0.2s;
   opacity: 1;
 }
 .Card > * {
@@ -26,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 1.5s;
   cursor: pointer;
 }
 .Card > .titleLayer > h2 {

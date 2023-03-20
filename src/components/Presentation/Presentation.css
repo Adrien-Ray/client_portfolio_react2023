@@ -1,0 +1,17 @@
+.presentation {
+  min-height: 100vh;
+  background-color: var(--background_component_presentation);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.presentation .presentation__center > * {
+  width: 20rem;
+  max-width: 100%;
+  color: white;
+}
+@media (min-width: 670px) {
+  .presentation .presentation__center > * {
+    width: 40rem;
+  }
+}/*# sourceMappingURL=Presentation.css.map */
