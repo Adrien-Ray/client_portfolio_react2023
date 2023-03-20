@@ -27,6 +27,7 @@
   max-width: 100%;
   color: white;
   position: relative;
+  margin: 0 0 2rem 0;
 }
 @media (min-width: 670px) {
   .presentation .presentation__center > *:not(.presentation__center__layer) {
@@ -34,10 +35,10 @@
   }
 }
 .presentation .presentation__center > *:not(.presentation__center__layer):nth-child(odd) {
-  animation: openingOdd 1s ease-out 0.5s 1 normal forwards;
+  animation: openingOdd 1s ease-out 0.25s 1 normal forwards;
 }
 .presentation .presentation__center > *:not(.presentation__center__layer):nth-child(even) {
-  animation: openingEven 1s ease-out 0.5s 1 normal forwards;
+  animation: openingEven 1s ease-out 0.25s 1 normal forwards;
 }
 .presentation .presentation__center .presentation__center__layer {
   position: absolute;
@@ -47,12 +48,44 @@
   height: 200%;
   animation-name: opening;
   animation-duration: 1s;
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-timing-function: ease-in-out;
   background-image: linear-gradient(to bottom, transparent, var(--background_component_presentation) 50%, var(--background_component_presentation));
+}
+.presentation .presentation__buttonLink {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  text-decoration: none;
+  background-color: black;
+  cursor: pointer;
+}
+.presentation .presentation__buttonLink:last-child {
+  margin-right: 0;
+}
+.presentation .presentation__buttonLink .content {
+  width: 100%;
+}
+.presentation .presentation__buttonLink .backLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.25s;
+}
+.presentation .presentation__buttonLink:hover .backLayer {
+  width: 100%;
+}
+.presentation .presentation__buttonLink .content {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
 }
 
 @keyframes opening {

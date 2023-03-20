@@ -30,12 +30,13 @@
 
             position: relative;
             &:nth-child(odd){
-                animation: openingOdd 1s ease-out .5s 1 normal forwards;
+                animation: openingOdd 1s ease-out .25s 1 normal forwards;
 
             }
             &:nth-child(even){
-                animation: openingEven 1s ease-out .5s 1 normal forwards;
+                animation: openingEven 1s ease-out .25s 1 normal forwards;
             }
+            margin: 0 0 2rem 0;
         }
         .presentation__center__layer{
             position: absolute;
@@ -45,12 +46,44 @@
             height: 200%;
             animation-name: opening;
             animation-duration: 1s;
-            animation-delay: .5s;
+            animation-delay: .25s;
             animation-fill-mode: forwards;
             animation-iteration-count: 1;
             animation-direction: normal;
             animation-timing-function: ease-in-out;
             background-image: linear-gradient(to bottom , transparent, var(--background_component_presentation) 50%, var(--background_component_presentation));
+        }
+    }
+    .presentation__buttonLink{
+        position: relative;
+        display: inline-block;
+        margin: 0 .5rem .5rem 0;
+        text-decoration: none;
+        &:last-child{
+            margin-right: 0;
+        }
+        .content{
+            width: 100%;
+        }
+        background-color: black;
+        cursor: pointer;
+        .backLayer{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: rgba($color: #ffffff, $alpha: .3);
+            transition: all .25s;
+        }
+        &:hover .backLayer{
+            width: 100%;
+        }
+        .content{
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: .5rem .5rem;
         }
     }
 }
