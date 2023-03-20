@@ -33,15 +33,15 @@ function Card(props) {
 
     return (
             <div className="Card">
-                <div className="titleLayer">
-                    <h2 onClick={() => setPopupProject(setShowPopup)}>{title}</h2>
+                <div className="titleLayer" onClick={() => setPopupProject(setShowPopup)}>
+                    <h2>{title}</h2>
                 </div>
                 <img
                     src={imgSrc}
                     alt={'thumbnail du projet'+title}
                     className={classThumb}
                 />
-                {showPopup && <PopupProject object={props.object} showPopup={showPopup} setShowPopup={setShowPopup}/>}
+                {showPopup && <PopupProject object={props.object} showPopup={showPopup} setShowPopup={setShowPopup} folderToUpload={folderToUpload}/>}
             </div>
     )
 }
