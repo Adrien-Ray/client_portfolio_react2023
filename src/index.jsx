@@ -35,18 +35,17 @@ function Layout() {
     const [brutData, updatebrutData] = React.useState({});
     const [autherObj, updateAutherObj] = React.useState({});
     let testExistData = Object.keys(brutData).length;
+    let letToProjectList = "";
     if (testExistData === 0) {
         funcFetch(updatebrutData, brutData);
     } else {
-        return(
-            <div>
-                <Presentation/>
-                <ProjectList brutData={brutData} autherObj={autherObj} updateAutherObj={updateAutherObj} />
-            </div>
-        )
+        letToProjectList = <ProjectList brutData={brutData} autherObj={autherObj} updateAutherObj={updateAutherObj} />;
     }
     return (
-        <Presentation/>
+        <div>
+            <Presentation/>
+            {letToProjectList}
+        </div>
     )
 }
 
