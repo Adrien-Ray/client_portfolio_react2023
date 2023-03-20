@@ -8,16 +8,36 @@
 .presentation .presentation__center {
   position: relative;
   overflow-y: hidden;
+  padding: 0 1rem;
+}
+.presentation .presentation__center > h1 {
+  text-align: center;
+}
+.presentation .presentation__center > h1 img {
+  height: 0.5em;
+  width: auto;
+  position: relative;
+  top: 0;
+}
+.presentation .presentation__center > h1 img.endImg {
+  transform: rotateY(180deg);
 }
 .presentation .presentation__center > *:not(.presentation__center__layer) {
   width: 20rem;
   max-width: 100%;
   color: white;
+  position: relative;
 }
 @media (min-width: 670px) {
   .presentation .presentation__center > *:not(.presentation__center__layer) {
     width: 40rem;
   }
+}
+.presentation .presentation__center > *:not(.presentation__center__layer):nth-child(odd) {
+  animation: openingOdd 1s ease-out 0s 1 normal forwards;
+}
+.presentation .presentation__center > *:not(.presentation__center__layer):nth-child(even) {
+  animation: openingEven 1s ease-out 0s 1 normal forwards;
 }
 .presentation .presentation__center .presentation__center__layer {
   position: absolute;
@@ -40,5 +60,21 @@
   }
   to {
     top: 100%;
+  }
+}
+@keyframes openingOdd {
+  from {
+    left: -1rem;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes openingEven {
+  from {
+    left: 1rem;
+  }
+  to {
+    left: 0;
   }
 }/*# sourceMappingURL=Presentation.css.map */
