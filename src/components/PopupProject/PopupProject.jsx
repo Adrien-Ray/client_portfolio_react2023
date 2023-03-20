@@ -44,7 +44,7 @@ function PopupProject (props) {
     let linkRepo = "";
     if (props.object.project_github !== "") {
         linkRepo = (
-        <a className='PopupProject__buttonLink' href={props.object.project_github}>
+        <a className='PopupProject__buttonLink' href={props.object.project_github} target="_blank">
             <div className="backLayer"></div>
             <div className="content">lien repository</div>
         </a>
@@ -53,7 +53,7 @@ function PopupProject (props) {
     let linkProject = "";
     if (props.object.project_link !== "") {
         linkProject = (
-        <a className='PopupProject__buttonLink' href={props.object.project_link}>
+        <a className='PopupProject__buttonLink' href={props.object.project_link} target="_blank">
             <div className="backLayer"></div>
             <div className="content">lien projet</div>
         </a>
