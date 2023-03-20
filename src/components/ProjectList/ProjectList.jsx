@@ -6,7 +6,7 @@ const folderToUpload = 'https://portfolio.accesdenied.net/assets/img/upload/';
 function ProjectList(props) {
     let projectArray = props.brutData.project;
     projectArray.sort((b, a) => {
-        return a.project_id - b.project_id;
+        return ('' + a.project_begin).localeCompare(b.project_begin);
       });
     // console.log('props.brutData.project.reverse() : ',  projectArray);
     let list = [];
