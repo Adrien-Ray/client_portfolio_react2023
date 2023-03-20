@@ -2,7 +2,7 @@ import "./PopupProject.css";
 // import React, { useState/* , useEffect */ } from 'react';
 
 function PopupProject (props) {
-    // props : object={props.object} showPopup={showPopup} setShowPopup={setShowPopup}
+    // props : object={props.object} showPopup={showPopup} setShowPopup={setShowPopup} folderToUpload
     let parentClass;
     (props.showPopup) ? parentClass = "PopupProject" : parentClass = "PopupProject displaynone";
 
@@ -13,10 +13,15 @@ function PopupProject (props) {
 
     return (
         <div className={parentClass}>
+
             <div className='PopupProject__buttonClose' onClick={() => setPopupProject(props.setShowPopup)}>
-                Fermer
+                <div className="backLayer"></div>
+                <div className="content">Fermer</div>
             </div>
-            <h1>PopupProject {props.object.project_title}</h1>
+
+            <h2 className="PopupProject__title">PopupProject {props.object.project_title}</h2>
+            <img className="PopupProject__thumbnail" src={props.folderToUpload+props.object.project_thumbnail} alt="présentation du projet" />
+            <p>{props.object.project_context}</p>
         </div>
         
     )

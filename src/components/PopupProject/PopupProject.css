@@ -1,3 +1,7 @@
+:root {
+  --PopupProjectPadding: 1rem;
+}
+
 .PopupProject {
   position: fixed;
   top: 0;
@@ -5,21 +9,47 @@
   display: block;
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-color: rgb(100, 100, 100);
+  color: white;
   z-index: 1000;
+  padding: 1rem;
+}
+.PopupProject > *:not(.PopupProject__buttonClose) {
+  max-width: calc(100vw - 2 * var(--PopupProjectPadding));
 }
 .PopupProject .PopupProject__buttonClose {
   position: absolute;
   top: 0;
-  right: 0;
+  right: var(--PopupProjectPadding);
   background-color: black;
+  cursor: pointer;
+}
+.PopupProject .PopupProject__buttonClose .backLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.25s;
+}
+.PopupProject .PopupProject__buttonClose:hover .backLayer {
+  width: 100%;
+}
+.PopupProject .PopupProject__buttonClose .content {
   width: 8rem;
   color: white;
   font-weight: bold;
   text-align: center;
   padding: 0.5rem 0.5rem;
-  cursor: pointer;
 }
 .PopupProject.displaynone {
   display: none;
+}
+.PopupProject .PopupProject__title {
+  margin-top: 2rem;
+}
+.PopupProject .PopupProject__thumbnail {
+  height: 14rem;
+  background-color: rgba(255, 255, 255, 0.4);
 }/*# sourceMappingURL=PopupProject.css.map */
