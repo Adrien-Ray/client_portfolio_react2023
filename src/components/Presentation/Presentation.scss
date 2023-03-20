@@ -30,11 +30,11 @@
 
             position: relative;
             &:nth-child(odd){
-                animation: openingOdd 1s ease-out 0s 1 normal forwards;
+                animation: openingOdd 1s ease-out .5s 1 normal forwards;
 
             }
             &:nth-child(even){
-                animation: openingEven 1s ease-out 0s 1 normal forwards;
+                animation: openingEven 1s ease-out .5s 1 normal forwards;
             }
         }
         .presentation__center__layer{
@@ -45,6 +45,7 @@
             height: 200%;
             animation-name: opening;
             animation-duration: 1s;
+            animation-delay: .5s;
             animation-fill-mode: forwards;
             animation-iteration-count: 1;
             animation-direction: normal;
