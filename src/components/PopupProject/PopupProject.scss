@@ -13,6 +13,7 @@
     color: white;
     z-index: 1000;
     padding: 1rem;
+    overflow-y: auto;
     >*:not(.PopupProject__buttonClose){
         max-width: calc(100vw - (2 * var(--PopupProjectPadding)));
     }
@@ -20,6 +21,24 @@
         position: absolute;
         top: 0;
         right: var(--PopupProjectPadding);
+        .content{
+            width: 7rem;
+        }
+    }
+    .PopupProject__buttonLink{
+        position: relative;
+        display: inline-block;
+        margin: 0 .5rem .5rem 0;
+        text-decoration: none;
+        &:last-child{
+            margin-right: 0;
+        }
+        .content{
+            width: 10rem;
+        }
+    }
+    .PopupProject__buttonLink,
+    .PopupProject__buttonClose{
         background-color: black;
         cursor: pointer;
         .backLayer{
@@ -28,14 +47,13 @@
             top: 0;
             height: 100%;
             width: 0;
-            background-color: rgba($color: #ffffff, $alpha: .2);
+            background-color: rgba($color: #ffffff, $alpha: .3);
             transition: all .25s;
         }
         &:hover .backLayer{
             width: 100%;
         }
         .content{
-            width: 8rem;
             color: white;
             font-weight: bold;
             text-align: center;
