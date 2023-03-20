@@ -10,10 +10,10 @@
   overflow-x: hidden;
 }
 .CardSlide .CardSlide__card {
-  animation: keyframeSlide 8s linear 0s 1 normal forwards;
+  animation: keyframeSlide 8s ease-in-out 0s 1 normal forwards;
 }
 .CardSlide .CardSlide__card2 {
-  animation: keyframeSlide2 8s linear 0s 1 normal forwards;
+  animation: keyframeSlide2 8s ease-in-out 0s 1 normal forwards;
 }
 .CardSlide .CardSlide__card,
 .CardSlide .CardSlide__card2 {
@@ -99,13 +99,13 @@
 @keyframes keyframeSlide {
   0% {
     opacity: 0;
-    left: 100%;
+    left: 50%;
   }
-  2% {
+  1% {
     opacity: 0;
-    left: 100%;
+    left: 50%;
   }
-  8% {
+  6% {
     opacity: 0;
   }
   10% {
@@ -116,28 +116,28 @@
     opacity: 1;
     left: 0;
   }
-  92% {
+  94% {
     opacity: 0;
   }
-  98% {
+  99% {
     opacity: 0;
-    left: -100%;
+    left: -50%;
   }
   100% {
     opacity: 0;
-    left: -100%;
+    left: -50%;
   }
 }
 @keyframes keyframeSlide2 {
   0% {
     opacity: 0;
-    left: 100%;
+    left: 50%;
   }
-  2% {
+  1% {
     opacity: 0;
-    left: 100%;
+    left: 50%;
   }
-  8% {
+  6% {
     opacity: 0;
   }
   10% {
@@ -148,15 +148,15 @@
     opacity: 1;
     left: 0;
   }
-  92% {
+  94% {
     opacity: 0;
   }
-  98% {
+  99% {
     opacity: 0;
-    left: -100%;
+    left: -50%;
   }
   100% {
     opacity: 0;
-    left: -100%;
+    left: -50%;
   }
 }/*# sourceMappingURL=CardSlide.css.map */

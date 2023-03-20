@@ -7,6 +7,19 @@
     .presentation__center{
         position: relative;
         overflow-y: hidden;
+        padding: 0 1rem;
+        >h1{
+            text-align: center;
+            img{
+                height: .5em;
+                width: auto;
+                position: relative;
+                top: 0;
+                &.endImg{
+                    transform: rotateY(180deg);
+                }
+            }
+        }
         >*:not(.presentation__center__layer){
             width: 20rem;
             max-width: 100%;
@@ -14,6 +27,15 @@
                 width: 40rem;
             }
             color: white;
+
+            position: relative;
+            &:nth-child(odd){
+                animation: openingOdd 1s ease-out 0s 1 normal forwards;
+
+            }
+            &:nth-child(even){
+                animation: openingEven 1s ease-out 0s 1 normal forwards;
+            }
         }
         .presentation__center__layer{
             position: absolute;
@@ -38,5 +60,22 @@
     }
     to{
         top: 100%;
+    }
+}
+
+@keyframes openingOdd {
+    from{
+        left: -1rem;
+    }
+    to{
+        left: 0;
+    }
+}
+@keyframes openingEven {
+    from{
+        left: 1rem;
+    }
+    to{
+        left: 0;
     }
 }
