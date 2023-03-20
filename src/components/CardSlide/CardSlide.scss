@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
     .CardSlide__card {
         animation: keyframeSlide 8s linear 0s 1 normal forwards;
     }
@@ -15,6 +16,7 @@
     }
     .CardSlide__card,
     .CardSlide__card2 {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -87,41 +89,65 @@
 @keyframes keyframeSlide {
     0% {
         opacity: 0;
+        left: 100%;
     }
     2% {
+        opacity: 0;
+        left: 100%;
+    }
+    8%{
         opacity: 0;
     }
     10% {
         opacity: 1;
+        left: 0;
     }
     90% {
         opacity: 1;
+        left: 0;
+    }
+    92%{
+        opacity: 0;
     }
     98% {
         opacity: 0;
+        left: -100%;
     }
     100% {
         opacity: 0;
+        left: -100%;
     }
 }
 
 @keyframes keyframeSlide2 {
     0% {
         opacity: 0;
+        left: 100%;
     }
     2% {
+        opacity: 0;
+        left: 100%;
+    }
+    8%{
         opacity: 0;
     }
     10% {
         opacity: 1;
+        left: 0;
     }
     90% {
         opacity: 1;
+        left: 0;
+    }
+    92%{
+        opacity: 0;
     }
     98% {
         opacity: 0;
+        left: -100%;
     }
     100% {
         opacity: 0;
+        left: -100%;
     }
 }
