@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
     .presentation__center{
-        >*{
+        position: relative;
+        overflow-y: hidden;
+        >*:not(.presentation__center__layer){
             width: 20rem;
             max-width: 100%;
             @media (min-width: 670px) {
@@ -13,5 +15,28 @@
             }
             color: white;
         }
+        .presentation__center__layer{
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            animation-name: opening;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-timing-function: ease-in-out;
+            background-image: linear-gradient(to bottom , transparent, var(--background_component_presentation) 50%, var(--background_component_presentation));
+        }
+    }
+}
+
+@keyframes opening {
+    from{
+        top: -100%;
+    }
+    to{
+        top: 100%;
     }
 }
