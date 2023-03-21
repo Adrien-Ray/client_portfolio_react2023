@@ -60,6 +60,9 @@
   display: inline-block;
   margin: 0 0.5rem 0.5rem 0;
   text-decoration: none;
+  /* width: 20rem !important;
+  max-width: 100%; */
+  padding: 0.5rem 0;
   background-color: black;
   cursor: pointer;
 }
@@ -67,7 +70,7 @@
   margin-right: 0;
 }
 .presentation .presentation__buttonLink .content {
-  width: 100%;
+  width: calc(100% - 1rem);
 }
 .presentation .presentation__buttonLink .backLayer {
   position: absolute;

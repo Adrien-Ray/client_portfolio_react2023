@@ -13,7 +13,7 @@ function Presentation() {
                 <p>Vous pouvez me contacter via le formulaire de contact:</p>
                 <a className='presentation__buttonLink' href='https://portfolio.accesdenied.net/pages/apropos.php' target="_blank" rel='noreferrer'>
                     <div className="backLayer"></div>
-                    <div className="content">Contact</div>
+                    <div className="content">Contact du portfolio initial</div>
                 </a>
                 <div className="presentation__center__layer"></div>
             </div>
