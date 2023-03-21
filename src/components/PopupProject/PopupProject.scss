@@ -9,13 +9,23 @@
     display:block;
     width: 100vw;
     height: 100vh;
+    line-height: 200%;
     background-color: var(--background_component_popupProject);
     color: white;
     z-index: 1000;
-    padding: 1rem;
+    padding: var(--PopupProjectPadding);
     overflow-y: auto;
+    animation: .25s ease-in-out 0s 1 normal forwards running openWindow;
     >*:not(.PopupProject__buttonClose){
-        max-width: calc(100vw - (2 * var(--PopupProjectPadding)));
+        width: calc(100vw - (2 * var(--PopupProjectPadding)));
+        display: block;
+        &:last-child{
+            margin-bottom: 5rem;
+        }
+        @media (min-width: 850px) {
+            max-width: 50rem;
+            margin: 1rem auto;
+        }
     }
     .PopupProject__buttonClose{
         position: absolute;
@@ -61,13 +71,38 @@
         }
     }
     &.displaynone{
-        display: none;
+        // display: none;
+        animation: .25s ease-in-out 0s 1 normal forwards running closeWindow;
     }
     .PopupProject__title{
         margin-top: 2rem;
     }
     .PopupProject__thumbnail{
         height: 14rem;
-        background-color: rgba(255, 255, 255, 0.4);
+        // background-color: rgba(255, 255, 255, 0.4);
+        object-fit: contain;
+        object-position: left;
+    }
+}
+
+@keyframes openWindow {
+    from{
+        // opacity: 0;
+        left: -100%;
+    }
+    to{
+        // opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes closeWindow {
+    from{
+        // opacity: 1;
+        left: 0;
+    }
+    to{
+        // opacity: 0;
+        left: -100%;
     }
 }

@@ -1,14 +1,20 @@
 import "./PopupProject.css";
-// import React, { useState/* , useEffect */ } from 'react';
+import React, { useState/* , useEffect */ } from 'react';
 
 function PopupProject (props) {
     // props : object={props.object} showPopup={showPopup} setShowPopup={setShowPopup} folderToUpload
+
+    const [unShowPopup, setUnShowPopup] = useState('PopupProject');
+
     let parentClass;
     (props.showPopup) ? parentClass = "PopupProject" : parentClass = "PopupProject displaynone";
 
     const setPopupProject = () => {
-        (props.showPopup) ? props.setShowPopup(false) : props.setShowPopup(true);
-        console.log('showPopup', props.showPopup);
+        setUnShowPopup('PopupProject displaynone');
+        setTimeout(() => {
+            (props.showPopup) ? props.setShowPopup(false) : props.setShowPopup(true);
+            console.log('showPopup', props.showPopup);
+        }, 250);
     }
 
     let displayPtech = "";
@@ -61,14 +67,14 @@ function PopupProject (props) {
     }
 
     return (
-        <div className={parentClass}>
+        <div className={unShowPopup}>
 
             <div className='PopupProject__buttonClose' onClick={() => setPopupProject(props.setShowPopup)}>
                 <div className="backLayer"></div>
                 <div className="content">Fermer</div>
             </div>
 
-            <h2 className="PopupProject__title">PopupProject {props.object.project_title}</h2>
+            <h2 className="PopupProject__title">{props.object.project_title}</h2>
             <div className="PopupProject__links">
                 {linkRepo}
                 {linkProject}
